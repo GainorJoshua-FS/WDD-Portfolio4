@@ -4,6 +4,7 @@ import Search from './components/Search';
 import Home from './components/Home';
 import Header from './components/Header';
 import Collection from './components/Collection';
+import SelectedGame from './components/SelectedGame';
 
 // cmd shift r -> rfce
 
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/search/:searchQuery" element={<Search />} />
+          <Route path="/SelectedGame/:gid" element={<SelectedGame />} />
           <Route path="/Collection" element={<Collection />} />
         </Routes>
 

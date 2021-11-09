@@ -39,7 +39,7 @@ function Search(){
                     return<article key={e.id} style={styles.card} >
                             <h2 style={styles.gameTitle}>{e.name}</h2>
                             <img style={styles.img} src={e.images.small} alt={e.name + "'s box art"} /> 
-                            <a href="/SelectedGame"> <button style={styles.newButton}>Select Game</button></a>
+                            <a href={`/SelectedGame/${e.id}`}> <button style={styles.newButton}>Select Game</button></a>
                         {/* <button style={styles.button}></button> */}
                     </article>
                 })}
