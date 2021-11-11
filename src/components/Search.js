@@ -39,7 +39,7 @@ function Search(){
                     return<article key={e.id} style={styles.card} >
                             <h2 style={styles.gameTitle}>{e.name}</h2>
                             <img style={styles.img} src={e.images.small} alt={e.name + "'s box art"} /> 
-                            <a href={`/SelectedGame/${e.id}`}> <button style={styles.newButton}>Select Game</button></a>
+                            <a href={`/SelectedGame/${e.id}`}> <button style={styles.button}></button></a>
                         {/* <button style={styles.button}></button> */}
                     </article>
                 })}
@@ -56,7 +56,7 @@ const styles ={
         height: "100%",
         top: "0",
         left: "0",
-        background: "red", //Change to transparent once figured out
+        background: "transparent", //Change to transparent once figured out
         cursor: "pointer"
     },
     card:{
@@ -65,7 +65,8 @@ const styles ={
         flexDirection: "column",
         width: "calc(100%/4)",
         height: "calc(100%/2)",
-        margin: "20px 0px"
+        margin: "20px 0px",
+        position: "relative"
     },
     div:{
         backgroundColor: "#FFE6A7",

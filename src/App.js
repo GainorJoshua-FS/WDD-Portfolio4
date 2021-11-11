@@ -5,6 +5,8 @@ import Home from './components/Home';
 import Header from './components/Header';
 import Collection from './components/Collection';
 import SelectedGame from './components/SelectedGame';
+// import React, { useState } from 'react';
+// import Games from './components/Games';
 
 // cmd shift r -> rfce
 
