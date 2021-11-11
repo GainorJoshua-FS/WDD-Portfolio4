@@ -38,7 +38,6 @@ export default class CollectionHelper{
 
     exists = (game) =>{
         let array = this.getGames();
-        // console.log(game + " exists()")
         if(array.indexOf(game) > -1){
             return true;
         }else{

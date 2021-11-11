@@ -1,32 +1,24 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import CollectionHelper from './CollectionHelper';
 
 function SelectedGame() {
 
 
-    let [idList,setIds] = useState("")
     let [isGameListed,setGameListed] = useState(false);
-    // let navigate = useNavigate();
     let gameList = new CollectionHelper("Collection")
-
-    // function updateGameList(e){
-    //     e.preventDefault()
-    //     setIds(e);
-    //     setGameListed(gameList.exists(e))
-    //     console.log("UPDATE GAME LIST: " + e)
-    // }
 
     function toggleGame(e,q){
         e.preventDefault();
         console.log("Add Game: ",e,q)
         gameList.saveGames(q)
         if(isGameListed){
-            // alert("Game Already Added: " + q)
+            //Game is already added
             gameList.removeGame(q)
             setGameListed(false)
         }
         else{
+            //Game is not already added
             gameList.saveGames(q)
             setGameListed(true)
         }
@@ -40,7 +32,6 @@ function SelectedGame() {
     const BASE_URL = "https://api.boardgameatlas.com/api/"
 
     let [selGame, setSelGame] = useState([]);
-    // let [gameId, setId] = useState("");
 
     useEffect(()=>{
         showGame(gid);
