@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import SearchForm from './SearchForm';
+import { css } from 'glamor'
 
 function Search(){
     const API_KEY = "lkziTbYVbS"
@@ -33,14 +34,12 @@ function Search(){
     return(
         <div style={styles.div}>
             <SearchForm/>
-            {/* <input name="searchInput" onChange={updateSearchQuery}/>
-                <button onClick={()=>doSearch(query)}>Search</button> */}
                 {gameArray.map((e,i)=>{
-                    return<article key={e.id} style={styles.card} >
+                    return<article key={e.id} {...css(card)} >
                             <h2 style={styles.gameTitle}>{e.name}</h2>
-                            <img style={styles.img} src={e.images.small} alt={e.name + "'s box art"} /> 
-                            <a href={`/SelectedGame/${e.id}`}> <button style={styles.button}></button></a>
-                        {/* <button style={styles.button}></button> */}
+                            <img style={styles.img} src={e.images.medium} alt={e.name + "'s box art"} /> 
+                            <a href={`/SelectedGame/${e.id}`}> <button {...css(btn)}></button></a>
+                            {/* <a href={`/SelectedGame/${e.id}`}> <button style={styles.button}></button></a> */}
                     </article>
                 })}
         </div>
@@ -56,23 +55,24 @@ const styles ={
         height: "100%",
         top: "0",
         left: "0",
-        background: "transparent", //Change to transparent once figured out
-        cursor: "pointer"
+        background: "transparent",
+        cursor: "pointer",
     },
     card:{
         backgroundColor: "#633817",
         display: "flex",
         flexDirection: "column",
-        width: "calc(100%/4)",
-        height: "calc(100%/2)",
+        width: "calc(85%/5)",
+        paddingBottom:"10px",
         margin: "20px 0px",
-        position: "relative"
+        position: "relative",
+        transition:"transform 0.25s"
     },
     div:{
         backgroundColor: "#FFE6A7",
         display: "flex",
         flexDirection: "row",
-        height: "100%",
+        height: "75%",
         flexWrap: "wrap",
         justifyContent: "space-around",
     },
@@ -88,9 +88,28 @@ const styles ={
         color:"#FFE6A7",
         fontFamily: "Futura PT"
     },
-    newButton:{
-        backgroundColor: "#432818",
-        color: "#FFE6A7",
-        fontFamily: "Montserrat"
-    }
 }
+
+let btn = css({
+    position: "absolute",
+    width: "100%",
+    height: "100%",
+    top: "0",
+    left: "0",
+    background: "transparent",
+    cursor: "pointer",
+})
+
+let card = css({
+    backgroundColor: "#633817",
+    display: "flex",
+    flexDirection: "column",
+    width: "calc(85%/5)",
+    paddingBottom:"10px",
+    margin: "20px 0px",
+    position: "relative",
+    transition:"transform 0.25s",
+    ':hover':{
+        transform: "scale(1.05)"
+    }
+})

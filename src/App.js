@@ -33,6 +33,6 @@ export default App;
 const styles={
   main:{
     backgroundColor: "#FFE6A7",
-    height: "100vh"
+    // height: "100%"
   }
 }
