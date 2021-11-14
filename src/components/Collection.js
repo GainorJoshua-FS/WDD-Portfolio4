@@ -19,17 +19,21 @@ function Collection() {
 
     function showGames(gameIds){
         gameIds = collection.getGames();
-        // console.log(gameIds)
-        for(let i = 0; i < gameIds.length; i++){
-            BASE_URL += gameIds[i] + ","
-        }
-        // console.log("Base URL: " + BASE_URL)
-        fetch(BASE_URL)
-        .then(response => response.json())
-        .then((data)=>{
-            console.log(data)
-            setCollectionArray(data.games)
-        })
+        // if(gameIds.length === 0){
+        //     BASE_URL = ""
+        // }
+        // else{
+            for(let i = 0; i < gameIds.length; i++){
+                BASE_URL += gameIds[i] + ","
+            }
+            // console.log("Base URL: " + BASE_URL)
+            fetch(BASE_URL)
+            .then(response => response.json())
+            .then((data)=>{
+                console.log(data)
+                setCollectionArray(data.games)
+            })
+        // }
     }
 
 
@@ -51,25 +55,6 @@ function Collection() {
 export default Collection
 
 const styles ={
-    button:{
-        position: "absolute",
-        width: "100%",
-        height: "100%",
-        top: "0",
-        left: "0",
-        background: "transparent",
-        cursor: "pointer",
-    },
-    card:{
-        backgroundColor: "#633817",
-        display: "flex",
-        flexDirection: "column",
-        width: "calc(85%/5)",
-        paddingBottom:"10px",
-        margin: "20px 0px",
-        position: "relative",
-        transition:"transform 0.25s"
-    },
     div:{
         backgroundColor: "#FFE6A7",
         display: "flex",
