@@ -43,7 +43,7 @@ const styles = {
     container:{
         position: "absolute",
         right: 0,
-        top: 170
+        top: 130,
     },
     search:{
         backgroundColor: "#FFE6A7",
