@@ -52,7 +52,7 @@ function Home() {
     return (
         <div>
             <div style={styles.div}>
-                <h2 style={styles.p}>Best Discounts Right Now</h2>
+                <h2 style={styles.subHead}>Best Discounts Right Now</h2>
                 <div style={styles.div}>
                     {discountArray.map((e,i)=>{
                             return<article key={e.id} {...css(card)} >
@@ -68,7 +68,7 @@ function Home() {
                 </div>
             </div>
             <div style={styles.div}>
-                <h2 style={styles.p}>Top Ranked Games</h2>
+                <h2 style={styles.subHead}>Top Ranked Games</h2>
                 <div style={styles.div}>
                     {rankArray.map((e,i)=>{
                             return<article key={e.id} {...css(card)} >
@@ -82,7 +82,7 @@ function Home() {
                 </div>
             </div>
             <div style={styles.div}>
-                <h2 style={styles.p}>Games Published This Year!</h2>
+                <h2 style={styles.subHead}>Games Published This Year!</h2>
                 <div style={styles.div}>
                     {dateArray.map((e,i)=>{
                             return<article key={e.id} {...css(card)} >
@@ -140,8 +140,9 @@ const styles ={
         color:"#FFE6A7",
         fontFamily: "Futura PT"
     },
-    p:{
+    subHead:{
         color:"#FFE6A7",
+        width: "100%"
     },
     ul:{
         color:"#FFE6A7",
