@@ -22,7 +22,8 @@ export default Header
 const styles ={
     header:{
         backgroundColor: "#633817",
-        paddingTop: "1px"
+        paddingTop: "1px",
+        marginTop: "-20px"
     },
     link:{
         backgroundColor: "#432818",
@@ -35,7 +36,8 @@ const styles ={
     title:{
         fontFamily: "Baskerville",
         fontWeight: "bold",
-        color: "#FFE6A7"
+        color: "#FFE6A7",
+        fontSize: "40px"
     },
     links:{
         display: "inline-block",
