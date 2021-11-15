@@ -95,13 +95,11 @@ const styles ={
     },
     imgBox:{
         width: "calc(100%/2 - 20px)",
-        // backgroundColor: "#633817",
         marginTop: "20px",
         marginRight: "20px"
     },
     img:{
         width: "80%",
-        // marginTop: "20px"
     },
     infoBox:{
         width: "calc(100%/2 - 1rem)",

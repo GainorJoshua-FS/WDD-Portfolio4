@@ -6,7 +6,7 @@ import Logo from '../images/logo.png';
 function Header() {
     return (
         <header style={styles.header}>
-            <h1 style={styles.title}>Board <img src={Logo} alt="Board Debut Logo"/> Debut</h1>
+            <h1 style={styles.title}>Board <a href="/"><img src={Logo} alt="Board Debut Logo"/></a> Debut</h1>
             <div style={styles.links}>
                 <Link style={styles.link} to="/">Home</Link>
                 <Link style={styles.link} to="/search/hill">Search</Link>
@@ -21,13 +21,16 @@ export default Header
 
 const styles ={
     header:{
-        backgroundColor: "#633817"
+        backgroundColor: "#633817",
+        paddingTop: "1px"
     },
     link:{
         backgroundColor: "#432818",
         color: "#FFE6A7",
         margin: "1rem",
         padding: "5px",
+        fontFamily: "Montserrat",
+        fontWeight: "bold"
     },
     title:{
         fontFamily: "Baskerville",
