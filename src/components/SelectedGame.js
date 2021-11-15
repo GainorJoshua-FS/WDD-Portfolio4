@@ -74,7 +74,7 @@ function SelectedGame() {
                         </dl>
                         <p style={styles.desc}>{obj.description_preview}</p>
                         <form onSubmit={(e)=>{toggleGame(e,obj.id)}}>
-                            <button type="submit" >{(!isGameListed) ? "Add to Collection":"remove from collection"}</button> 
+                            <button style={styles.button} type="submit" >{(!isGameListed) ? "Add to Collection":"Remove from collection"}</button> 
                         </form>
                     </div>
                 </section>
@@ -132,5 +132,15 @@ const styles ={
         fontSize: "20px",
         fontFamily: "Montserrat",
         fontWeight: "bold"
+    },
+    button:{
+        backgroundColor: "#633817",
+        color: "#FFE6A7",
+        fontFamily: "Montserrat",
+        padding: "15px",
+        borderRadius: "16px",
+        border: "none",
+        cursor: "pointer",
+        fontWeight: "bold",
     }
 }
