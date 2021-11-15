@@ -5,8 +5,7 @@ import Home from './components/Home';
 import Header from './components/Header';
 import Collection from './components/Collection';
 import SelectedGame from './components/SelectedGame';
-// import React, { useState } from 'react';
-// import Games from './components/Games';
+import Wishlist from './components/Wishlist';
 
 // cmd shift r -> rfce
 
@@ -20,6 +19,7 @@ function App() {
           <Route path="/search/:searchQuery" element={<Search />} />
           <Route path="/SelectedGame/:gid" element={<SelectedGame />} />
           <Route path="/Collection" element={<Collection />} />
+          <Route path="/Wishlist" element={<Wishlist />} />
         </Routes>
 
         {/* <Search/> */}

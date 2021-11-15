@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-// import SearchForm from './SearchForm';
 import Logo from '../images/logo.png';
 
 function Header() {
@@ -11,7 +10,7 @@ function Header() {
                 <Link style={styles.link} to="/">Home</Link>
                 <Link style={styles.link} to="/search/hill">Search</Link>
                 <Link style={styles.link} to="/Collection">My Collection</Link>
-                {/* <SearchForm /> */}
+                <Link style={styles.link} to="/Wishlist">Wishlist</Link>
             </div>
         </header>
     )

@@ -6,36 +6,50 @@ function SelectedGame() {
 
 
     let [isGameListed,setGameListed] = useState(false);
-    let gameList = new CollectionHelper("Collection")
+    let [isWishListed,setWishListed] = useState(false);
+    let [selGame, setSelGame] = useState([]);
+    let collectionList = new CollectionHelper("Collection")
+    let wishlistList = new CollectionHelper("Wishlist")
+    const { gid } = useParams()
+    const API_KEY = "lkziTbYVbS"
+    const BASE_URL = "https://api.boardgameatlas.com/api/"
 
-    function toggleGame(e,q){
+    function toggleColGame(e,q){
         e.preventDefault();
         console.log("Add Game: ",e,q)
-        gameList.saveGames(q)
+        collectionList.saveGames(q)
         if(isGameListed){
             //Game is already added
-            gameList.removeGame(q)
+            collectionList.removeGame(q)
             setGameListed(false)
         }
         else{
             //Game is not already added
-            gameList.saveGames(q)
+            collectionList.saveGames(q)
             setGameListed(true)
         }
     }
 
-
-
-    const { gid } = useParams()
-    console.log(gid)
-    const API_KEY = "lkziTbYVbS"
-    const BASE_URL = "https://api.boardgameatlas.com/api/"
-
-    let [selGame, setSelGame] = useState([]);
+    function toggleWishGame(e,q){
+        e.preventDefault();
+        console.log("Add Game: ",e,q)
+        wishlistList.saveGames(q)
+        if(isWishListed){
+            //Game is already added
+            wishlistList.removeGame(q)
+            setWishListed(false)
+        }
+        else{
+            //Game is not already added
+            wishlistList.saveGames(q)
+            setWishListed(true)
+        }
+    }
 
     useEffect(()=>{
         showGame(gid);
-        setGameListed(gameList.exists(gid))
+        setGameListed(collectionList.exists(gid))
+        setWishListed(wishlistList.exists(gid))
     },[])
 
     function showGame(gameId){
@@ -73,8 +87,11 @@ function SelectedGame() {
                             <dt style={styles.dt}>{obj.min_age + "+"}</dt>
                         </dl>
                         <p style={styles.desc}>{obj.description_preview}</p>
-                        <form onSubmit={(e)=>{toggleGame(e,obj.id)}}>
+                        <form onSubmit={(e)=>{toggleColGame(e,obj.id)}}>
                             <button style={styles.button} type="submit" >{(!isGameListed) ? "Add to Collection":"Remove from collection"}</button> 
+                        </form>
+                        <form onSubmit={(e)=>{toggleWishGame(e,obj.id)}}>
+                            <button style={styles.button} type="submit" >{(!isWishListed) ? "Add to Wishlist":"Remove from Wishlist"}</button> 
                         </form>
                     </div>
                 </section>
@@ -115,7 +132,8 @@ const styles ={
     },
     title:{
         textAlign: "center",
-        fontSize: "45px"
+        fontSize: "45px",
+        marginTop: "20px"
     },
     dd:{
         fontFamily: "Futura PT",

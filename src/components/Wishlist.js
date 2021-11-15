@@ -3,47 +3,39 @@ import { useParams } from 'react-router-dom';
 import CollectionHelper from './CollectionHelper';
 import { css } from 'glamor';
 
-function Collection() {
+
+function Wishlist() {
 
     const { gid } = useParams()
 
     let BASE_URL = "https://api.boardgameatlas.com/api/search?client_id=lkziTbYVbS&ids="
-    let [collectionArray, setCollectionArray] = useState([]);
-    let collection = new CollectionHelper("Collection");
+    let [wishlistArray, setWishlistArray] = useState([]);
+    let wishlist = new CollectionHelper("Wishlist");
 
     useEffect(()=>{
         showGames(gid);
     },[gid])
 
     function showGames(gameIds){
-        gameIds = collection.getGames();
-        // if(gameIds.length === 0){
-        //     BASE_URL = ""
-        // }
-        // else{
-            for(let i = 0; i < gameIds.length; i++){
-                BASE_URL += gameIds[i] + ","
-            }
-            // console.log("Base URL: " + BASE_URL)
-            fetch(BASE_URL)
-            .then(response => response.json())
-            .then((data)=>{
-                console.log(data)
-                setCollectionArray(data.games)
-                console.log("GAME: " + data[1])
-            })
-        // }
+        gameIds = wishlist.getGames();
+        for(let i = 0; i < gameIds.length; i++){
+            BASE_URL += gameIds[i] + ","
+        }
+        fetch(BASE_URL)
+        .then(response => response.json())
+        .then((data)=>{
+            console.log(data)
+            setWishlistArray(data.games)
+        })
     }
-
-
-
 
     return (
         <div style={styles.div}>
-            {collectionArray.map((e,i)=>{
+            {wishlistArray.map((e,i)=>{
                 return <article key={e.id} {...css(card)} >
                 <h2 style={styles.gameTitle}>{e.name}</h2>
                 <img style={styles.img} src={e.images.medium} alt={e.name + "'s box art"} /> 
+                <h3>{e.msrp_text}</h3>
                 <a href={`/SelectedGame/${e.id}`}> <button {...css(btn)}></button></a>
         </article>
             })}
@@ -51,7 +43,7 @@ function Collection() {
     )
 }
 
-export default Collection
+export default Wishlist
 
 const styles ={
     div:{
