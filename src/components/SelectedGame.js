@@ -53,26 +53,26 @@ function SelectedGame() {
             {selGame.map((obj,i)=>{
                 return <section key={obj.id} style={styles.container}>
                      {/* IMAGE  */}
-                    <div>
-                        <img src={obj.images.medium} alt={obj.name + "'s box art"} />
+                    <div style={styles.imgBox}>
+                        <img style={styles.img} src={obj.images.medium} alt={obj.name + "'s box art"} />
                     </div>
                     {/* INFO */}
                     <div style={styles.infoBox}>
-                        <h2>{obj.name}</h2>
-                        <dl>
-                            <dd>Players:</dd>
-                            <dt>{obj.min_players + "-" + obj.max_players}</dt>
+                        <h2 style={styles.title}>{obj.name}</h2>
+                        <dl style={styles.dl}>
+                            <dd style={styles.dd}>Players:</dd>
+                            <dt style={styles.dt}>{" " + obj.min_players + "-" + obj.max_players}</dt>
 
-                            <dd>Time:</dd>
-                            <dt>{obj.min_playtime + "-" + obj.max_playtime + "mins"}</dt>
+                            <dd style={styles.dd}>Time:</dd>
+                            <dt style={styles.dt}>{obj.min_playtime + "-" + obj.max_playtime + "mins"}</dt>
 
-                            <dd>Price:</dd>
-                            <dt>{obj.msrp_text}</dt>
+                            <dd style={styles.dd}>Price:</dd>
+                            <dt style={styles.dt}>{obj.msrp_text}</dt>
 
-                            <dd>Ages:</dd>
-                            <dt>{obj.min_age + "+"}</dt>
+                            <dd style={styles.dd}>Ages:</dd>
+                            <dt style={styles.dt}>{obj.min_age + "+"}</dt>
                         </dl>
-                        <p>{obj.description_preview}</p>
+                        <p style={styles.desc}>{obj.description_preview}</p>
                         <form onSubmit={(e)=>{toggleGame(e,obj.id)}}>
                             <button type="submit" >{(!isGameListed) ? "Add to Collection":"remove from collection"}</button> 
                         </form>
@@ -94,12 +94,45 @@ const styles ={
         flexDirection: "row"
     },
     imgBox:{
-
+        width: "calc(100%/2 - 20px)",
+        // backgroundColor: "#633817",
+        marginTop: "20px",
+        marginRight: "20px"
+    },
+    img:{
+        width: "80%",
+        // marginTop: "20px"
     },
     infoBox:{
+        width: "calc(100%/2 - 1rem)",
         display: "flex",
         flexDirection: "column",
         textAlign: "left",
         color: "#633817"
+    },
+    dl:{
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "center"
+    },
+    title:{
+        textAlign: "center",
+        fontSize: "45px"
+    },
+    dd:{
+        fontFamily: "Futura PT",
+        fontWeight: "bold",
+        fontSize: "24px"
+    },
+    dt:{
+        fontFamily: "Montserrat",
+        fontSize: "20px",
+        marginLeft: "10px",
+        marginTop: "6px"
+    },
+    desc:{
+        fontSize: "20px",
+        fontFamily: "Montserrat",
+        fontWeight: "bold"
     }
 }

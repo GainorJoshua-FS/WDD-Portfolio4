@@ -32,6 +32,7 @@ function Collection() {
             .then((data)=>{
                 console.log(data)
                 setCollectionArray(data.games)
+                console.log("GAME: " + data[1])
             })
         // }
     }
