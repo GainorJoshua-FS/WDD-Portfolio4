@@ -8,7 +8,7 @@ function PriceCard(props) {
             <h2 style={styles.gameTitle}>{props.name}</h2>
             <img style={styles.img} src={props.image} alt={props.name + "'s box art"} /> 
             <ul style={styles.ul}>
-                <li><span style={styles.was}>Was: ${props.msrp}</span></li>
+                <li style={styles.was}>Was: ${props.msrp}</li>
                 <li>Now: ${props.price}</li>
             </ul>
             <Link to={`/SelectedGame/${props.id}`}><button {...css(btn)}></button></Link>
@@ -20,34 +20,6 @@ function PriceCard(props) {
 export default PriceCard
 
 const styles ={
-    button:{
-        position: "absolute",
-        width: "100%",
-        height: "100%",
-        top: "0",
-        left: "0",
-        background: "transparent",
-        cursor: "pointer",
-    },
-    card:{
-        backgroundColor: "#633817",
-        display: "flex",
-        flexDirection: "column",
-        width: "calc(85%/5)",
-        paddingBottom:"10px",
-        margin: "20px 0px",
-        position: "relative",
-        transition:"transform 0.25s",
-    },
-    div:{
-        backgroundColor: "#99582A",
-        display: "flex",
-        flexDirection: "row",
-        height: "75%",
-        flexWrap: "wrap",
-        justifyContent: "space-around",
-        marginTop:"20px",
-    },
     img:{
         objectFit: "contain",
         height: "75%",
@@ -59,10 +31,6 @@ const styles ={
     gameTitle:{
         color:"#FFE6A7",
         fontFamily: "Futura PT"
-    },
-    subHead:{
-        color:"#FFE6A7",
-        width: "100%"
     },
     ul:{
         color:"#FFE6A7",

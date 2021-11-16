@@ -7,7 +7,7 @@ function DateCard(props) {
         <article {...css(card)} >
             <h2 style={styles.gameTitle}>{props.name}</h2>
             <img style={styles.img} src={props.image} alt={props.name + "'s box art"} /> 
-            <h3>{props.date}</h3>
+            <h3 style={styles.subInfo}>{props.date}</h3>
             <Link to={`/SelectedGame/${props.id}`}><button {...css(btn)}></button></Link>
             {/* <a href={`/SelectedGame/${e.id}`}> <button {...css(btn)}></button></a> */}
         </article>
@@ -17,34 +17,6 @@ function DateCard(props) {
 export default DateCard
 
 const styles ={
-    button:{
-        position: "absolute",
-        width: "100%",
-        height: "100%",
-        top: "0",
-        left: "0",
-        background: "transparent",
-        cursor: "pointer",
-    },
-    card:{
-        backgroundColor: "#633817",
-        display: "flex",
-        flexDirection: "column",
-        width: "calc(85%/5)",
-        paddingBottom:"10px",
-        margin: "20px 0px",
-        position: "relative",
-        transition:"transform 0.25s",
-    },
-    div:{
-        backgroundColor: "#99582A",
-        display: "flex",
-        flexDirection: "row",
-        height: "75%",
-        flexWrap: "wrap",
-        justifyContent: "space-around",
-        marginTop:"20px",
-    },
     img:{
         objectFit: "contain",
         height: "75%",
@@ -57,20 +29,13 @@ const styles ={
         color:"#FFE6A7",
         fontFamily: "Futura PT"
     },
-    subHead:{
-        color:"#FFE6A7",
-        width: "100%"
-    },
-    ul:{
+    subInfo:{
         color:"#FFE6A7",
         textAlign: "center",
         padding: "10px",
         width: "100%",
         margin: "0 auto",
     },
-    was:{
-        textDecoration: "line-through"
-    }
 }
 
 let btn = css({
