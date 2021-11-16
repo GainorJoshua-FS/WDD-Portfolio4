@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import SearchForm from './SearchForm';
 import { css } from 'glamor'
 
@@ -38,8 +38,8 @@ function Search(){
                     return<article key={e.id} {...css(card)} >
                             <h2 style={styles.gameTitle}>{e.name}</h2>
                             <img style={styles.img} src={e.images.medium} alt={e.name + "'s box art"} /> 
-                            <a href={`/SelectedGame/${e.id}`}> <button {...css(btn)}></button></a>
-                            {/* <a href={`/SelectedGame/${e.id}`}> <button style={styles.button}></button></a> */}
+                            <Link to={`/SelectedGame/${e.id}`}><button {...css(btn)}></button></Link>
+                            {/* <a href={`/SelectedGame/${e.id}`}> <button {...css(btn)}></button></a> */}
                     </article>
                 })}
         </div>
@@ -98,6 +98,7 @@ let btn = css({
     left: "0",
     background: "transparent",
     cursor: "pointer",
+    border: "none",
 })
 
 let card = css({

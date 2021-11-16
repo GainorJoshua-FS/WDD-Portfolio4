@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import CollectionHelper from './CollectionHelper';
 import { css } from 'glamor';
 
@@ -17,10 +17,10 @@ function Collection() {
 
     function showGames(gameIds){
         gameIds = collection.getGames();
-        // if(gameIds.length === 0){
-        //     BASE_URL = ""
-        // }
-        // else{
+        console.log(gameIds)
+        if(gameIds.length === 0){
+            return
+        }
             for(let i = 0; i < gameIds.length; i++){
                 BASE_URL += gameIds[i] + ","
             }
@@ -32,7 +32,6 @@ function Collection() {
                 setCollectionArray(data.games)
                 console.log("GAME: " + data[1])
             })
-        // }
     }
 
 
@@ -44,7 +43,8 @@ function Collection() {
                 return <article key={e.id} {...css(card)} >
                 <h2 style={styles.gameTitle}>{e.name}</h2>
                 <img style={styles.img} src={e.images.medium} alt={e.name + "'s box art"} /> 
-                <a href={`/SelectedGame/${e.id}`}> <button {...css(btn)}></button></a>
+                <Link to={`/SelectedGame/${e.id}`}><button {...css(btn)}></button></Link>
+                {/* <a href={`/SelectedGame/${e.id}`}> <button {...css(btn)}></button></a> */}
         </article>
             })}
         </div>
@@ -84,6 +84,7 @@ let btn = css({
     left: "0",
     background: "transparent",
     cursor: "pointer",
+    border: "none",
 })
 
 let card = css({
@@ -95,6 +96,7 @@ let card = css({
     margin: "20px 0px",
     position: "relative",
     transition:"transform 0.25s",
+    borderRadius: "12px",
     ':hover':{
         transform: "scale(1.05)"
     }

@@ -88,10 +88,12 @@ function SelectedGame() {
                         </dl>
                         <p style={styles.desc}>{obj.description_preview}</p>
                         <form onSubmit={(e)=>{toggleColGame(e,obj.id)}}>
-                            <button style={styles.button} type="submit" >{(!isGameListed) ? "Add to Collection":"Remove from collection"}</button> 
+                            {/* <button style={styles.button} type="submit" >{(!isGameListed) ? "Add to Collection":"Remove from collection"}</button> */}
+                            {(!isGameListed) ? <button style={styles.button} type="submit">Add to Collection</button> : <button style={styles.button2} type="submit">remove from my Collection</button> }
                         </form>
                         <form onSubmit={(e)=>{toggleWishGame(e,obj.id)}}>
-                            <button style={styles.button} type="submit" >{(!isWishListed) ? "Add to Wishlist":"Remove from Wishlist"}</button> 
+                            {/* <button style={styles.button} type="submit" >{(!isWishListed) ? "Add to Wishlist":"Remove from Wishlist"}</button>  */}
+                            {(!isWishListed) ? <button style={styles.button} type="submit">Add to Wishlist</button> : <button style={styles.button2} type="submit">remove from my Wishlist</button> }
                         </form>
                     </div>
                 </section>
@@ -156,7 +158,17 @@ const styles ={
         color: "#FFE6A7",
         fontFamily: "Montserrat",
         padding: "15px",
-        borderRadius: "16px",
+        borderRadius: "12px",
+        border: "none",
+        cursor: "pointer",
+        fontWeight: "bold",
+    },
+    button2:{
+        backgroundColor: "#9E2A2B",
+        color: "#FFE6A7",
+        fontFamily: "Montserrat",
+        padding: "15px",
+        borderRadius: "12px",
         border: "none",
         cursor: "pointer",
         fontWeight: "bold",

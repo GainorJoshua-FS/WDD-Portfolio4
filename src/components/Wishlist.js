@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import CollectionHelper from './CollectionHelper';
 import { css } from 'glamor';
 
@@ -36,7 +36,8 @@ function Wishlist() {
                 <h2 style={styles.gameTitle}>{e.name}</h2>
                 <img style={styles.img} src={e.images.medium} alt={e.name + "'s box art"} /> 
                 <h3>{e.msrp_text}</h3>
-                <a href={`/SelectedGame/${e.id}`}> <button {...css(btn)}></button></a>
+                <Link to={`/SelectedGame/${e.id}`}><button {...css(btn)}></button></Link>
+                {/* <a href={`/SelectedGame/${e.id}`}> <button {...css(btn)}></button></a> */}
         </article>
             })}
         </div>
@@ -76,6 +77,7 @@ let btn = css({
     left: "0",
     background: "transparent",
     cursor: "pointer",
+    border: "none",
 })
 
 let card = css({
