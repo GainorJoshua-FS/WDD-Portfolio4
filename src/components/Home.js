@@ -73,7 +73,7 @@ function Home() {
                 <div style={styles.div}>
                     {(discountArray.length === 0)?<h1 style={styles.loading}>Loading...</h1>:""}
                     {dateArray.map((e,i)=>{
-                            return <DateCard key={e.id} id={e.id} name={e.name} image={e.images.medium} />
+                            return <DateCard key={e.id} id={e.id} name={e.name} image={e.images.medium} info={e.msrp_text !== undefined ? e.msrp_text:"Price Unavailable"} />
                         })}
                 </div>
             </div>

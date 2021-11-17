@@ -53,6 +53,7 @@ const styles = {
         padding: "5px",
         borderRadius: "10px",
         fontFamily: "Futura PT",
+        fontSize: "16px"
     },
     btn:{
         backgroundColor: "#633817",

@@ -87,14 +87,16 @@ function SelectedGame() {
                             <dt class="info" style={styles.dt}>{obj.min_age + "+"}</dt>
                         </dl>
                         <p class="info" style={styles.desc}>{obj.description_preview}</p>
-                        <form onSubmit={(e)=>{toggleColGame(e,obj.id)}}>
-                            {/* <button style={styles.button} type="submit" >{(!isGameListed) ? "Add to Collection":"Remove from collection"}</button> */}
-                            {(!isGameListed) ? <button style={styles.button} type="submit">Add to Collection</button> : <button style={styles.button2} type="submit">remove from my Collection</button> }
-                        </form>
-                        <form onSubmit={(e)=>{toggleWishGame(e,obj.id)}}>
-                            {/* <button style={styles.button} type="submit" >{(!isWishListed) ? "Add to Wishlist":"Remove from Wishlist"}</button>  */}
-                            {(!isWishListed) ? <button class="info" style={styles.button} type="submit">Add to Wishlist</button> : <button class="info" style={styles.button2} type="submit">remove from my Wishlist</button> }
-                        </form>
+                        <div style={styles.btns}>
+                            <form onSubmit={(e)=>{toggleColGame(e,obj.id)}}>
+                                {/* <button style={styles.button} type="submit" >{(!isGameListed) ? "Add to Collection":"Remove from collection"}</button> */}
+                                {(!isGameListed) ? <button style={styles.button} type="submit">Add to Collection</button> : <button style={styles.button2} type="submit">remove from my Collection</button> }
+                            </form>
+                            <form onSubmit={(e)=>{toggleWishGame(e,obj.id)}}>
+                                {/* <button style={styles.button} type="submit" >{(!isWishListed) ? "Add to Wishlist":"Remove from Wishlist"}</button>  */}
+                                {(!isWishListed) ? <button class="info" style={styles.button} type="submit">Add to Wishlist</button> : <button class="info" style={styles.button2} type="submit">remove from my Wishlist</button> }
+                            </form>
+                        </div>
                     </div>
                 </section>
             })}
@@ -114,18 +116,20 @@ const styles ={
     },
     imgBox:{
         width: "calc(100%/2 - 20px)",
-        marginTop: "20px",
-        marginRight: "20px"
+        backgroundColor: "white",
+        margin: "20px 20px 0px 100px"
     },
     img:{
         width: "80%",
+        marginTop: "40px"
     },
     infoBox:{
         width: "calc(100%/2 - 1rem)",
         display: "flex",
         flexDirection: "column",
         textAlign: "left",
-        color: "#633817"
+        color: "#633817",
+        marginRight: "100px"
     },
     dl:{
         display: "flex",
@@ -162,6 +166,7 @@ const styles ={
         border: "none",
         cursor: "pointer",
         fontWeight: "bold",
+        marginRight: "10px"
     },
     button2:{
         backgroundColor: "#9E2A2B",
@@ -172,5 +177,9 @@ const styles ={
         border: "none",
         cursor: "pointer",
         fontWeight: "bold",
+        marginRight: "10px"
+    },
+    btns:{
+        display: "flex"
     }
 }
