@@ -22,7 +22,9 @@ const styles ={
     header:{
         backgroundColor: "#633817",
         paddingTop: "1px",
-        marginTop: "-20px"
+        marginTop: "-20px",
+        display: "flex",
+        flexDirection: "column",
     },
     link:{
         backgroundColor: "#432818",
@@ -36,10 +38,14 @@ const styles ={
         fontFamily: "Baskerville",
         fontWeight: "bold",
         color: "#FFE6A7",
-        fontSize: "40px"
+        fontSize: "40px",
+        marginBottom: "5px",
+        
     },
     links:{
         display: "inline-block",
-        textAlign: "right"
+        textAlign: "right",
+        marginBottom:"5px"
+        // width: "30%"
     }
 }

@@ -10,13 +10,9 @@ import RankCard from './RankCard';
 function Home() {
 
     //  TODO: 
-    // If discount array is empty, loading screen, else map 
-    // update buttons on cards - DONE
     // Add Footer
     // Reactive design
     // Ratings and release dates on home page
-    // Change buttons based on collection - DONE
-    // Change meta in public/index.html - DONE
     
 
     const year = new Date().getFullYear() - 1
@@ -77,7 +73,7 @@ function Home() {
                 <div style={styles.div}>
                     {(discountArray.length === 0)?<h1 style={styles.loading}>Loading...</h1>:""}
                     {dateArray.map((e,i)=>{
-                            return <DateCard key={e.id} id={e.id} name={e.name} image={e.images.medium} date={e.rank} />
+                            return <DateCard key={e.id} id={e.id} name={e.name} image={e.images.medium} />
                         })}
                 </div>
             </div>

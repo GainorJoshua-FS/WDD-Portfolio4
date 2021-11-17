@@ -32,8 +32,9 @@ function Search(){
         })
     }
     return(
-        <div style={styles.div}>
+        <section style={styles.container}>
             <SearchForm/>
+            <div style={styles.div}>
                 {gameArray.map((e,i)=>{
                     return<article key={e.id} {...css(card)} >
                             <h2 class="subHead" style={styles.gameTitle}>{e.name}</h2>
@@ -42,7 +43,8 @@ function Search(){
                             {/* <a href={`/SelectedGame/${e.id}`}> <button {...css(btn)}></button></a> */}
                     </article>
                 })}
-        </div>
+            </div>
+        </section>
     )
 }
 
@@ -87,6 +89,14 @@ const styles ={
     gameTitle:{
         color:"#FFE6A7",
         fontFamily: "Futura PT"
+    },
+    container:{
+        backgroundColor: "#FFE6A7",
+        display: "flex",
+        flexDirection: "column",
+        height: "75%",
+        flexWrap: "wrap",
+        justifyContent: "space-around",
     },
 }
 

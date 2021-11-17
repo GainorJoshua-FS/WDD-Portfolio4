@@ -30,8 +30,8 @@ function SearchForm() {
     return (
         <section style={styles.container}>
             <form onSubmit={(e)=>doSearch(e,query)}>
-                <input style={styles.search} name="searchInput" value={query} onChange={updateSearchQuery}/>
-                <button type="submit">Search</button>
+                <input class="subHead" style={styles.search} name="searchInput" value={query} onChange={updateSearchQuery}/>
+                <button class="info" style={styles.btn} type="submit">Search</button>
             </form>
         </section>
     )
@@ -41,12 +41,28 @@ export default SearchForm
 
 const styles = {
     container:{
-        position: "absolute",
-        right: 0,
-        top: 130,
+        textAlign: "right"
     },
     search:{
-        backgroundColor: "#FFE6A7",
-        color: "#633817"
+        // backgroundColor: "#",
+        color: "#633817",
+        backgroundColor: "#BB9457",
+        border: "none",
+        fontWeight: "900",
+        marginTop: "10px",
+        padding: "5px",
+        borderRadius: "10px",
+        fontFamily: "Futura PT",
+    },
+    btn:{
+        backgroundColor: "#633817",
+        color: "#FFE6A7",
+        fontFamily: "Montserrat",
+        borderRadius: "12px",
+        border: "none",
+        cursor: "pointer",
+        fontWeight: "bold",
+        margin: "10px 30px 0px 0px",
+        padding: "5px"
     }
 }
