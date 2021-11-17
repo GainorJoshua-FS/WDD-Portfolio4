@@ -36,7 +36,7 @@ function Search(){
             <SearchForm/>
                 {gameArray.map((e,i)=>{
                     return<article key={e.id} {...css(card)} >
-                            <h2 style={styles.gameTitle}>{e.name}</h2>
+                            <h2 class="subHead" style={styles.gameTitle}>{e.name}</h2>
                             <img style={styles.img} src={e.images.medium} alt={e.name + "'s box art"} /> 
                             <Link to={`/SelectedGame/${e.id}`}><button {...css(btn)}></button></Link>
                             {/* <a href={`/SelectedGame/${e.id}`}> <button {...css(btn)}></button></a> */}

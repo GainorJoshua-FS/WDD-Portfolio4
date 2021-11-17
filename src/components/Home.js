@@ -15,8 +15,8 @@ function Home() {
     // Add Footer
     // Reactive design
     // Ratings and release dates on home page
-    // Change buttons based on collection
-    // Change meta in public/index.html
+    // Change buttons based on collection - DONE
+    // Change meta in public/index.html - DONE
     
 
     const year = new Date().getFullYear() - 1
@@ -66,25 +66,27 @@ function Home() {
             <div style={styles.div}>
                 <h2 style={styles.subHead}>Best Discounts Right Now</h2>
                 <div style={styles.div}>
-                    {(discountArray.length === 0)?"Loading...":""}
+                    {(discountArray.length === 0)?<h1 style={styles.loading}>Loading...</h1>:""}
                     {discountArray.map((e,i)=>{
                         return<PriceCard key={e.id} id={e.id} name={e.name} image={e.images.medium} msrp={e.msrp} price={e.price} />
                         })}
                 </div>
             </div>
             <div style={styles.div}>
-                <h2 style={styles.subHead}>Top Ranked Games</h2>
+                <h2 style={styles.subHead}>Best Games Published This Year!</h2>
                 <div style={styles.div}>
-                    {rankArray.map((e,i)=>{
-                            return <RankCard key={e.id} id={e.id} name={e.name} image={e.images.medium} rank={e.average_user_rating.toFixed(2)}  />
+                    {(discountArray.length === 0)?<h1 style={styles.loading}>Loading...</h1>:""}
+                    {dateArray.map((e,i)=>{
+                            return <DateCard key={e.id} id={e.id} name={e.name} image={e.images.medium} date={e.rank} />
                         })}
                 </div>
             </div>
             <div style={styles.div}>
-                <h2 style={styles.subHead}>Best Games Published This Year!</h2>
+                <h2 style={styles.subHead}>Top Ranked Games</h2>
                 <div style={styles.div}>
-                    {dateArray.map((e,i)=>{
-                            return <DateCard key={e.id} id={e.id} name={e.name} image={e.images.medium} date={e.rank} />
+                    {(discountArray.length === 0)?<h1 style={styles.loading}>Loading...</h1>:""}
+                    {rankArray.map((e,i)=>{
+                            return <RankCard key={e.id} id={e.id} name={e.name} image={e.images.medium} rank={e.rank} rating={e.average_user_rating.toFixed(2)}  />
                         })}
                 </div>
             </div>
@@ -108,4 +110,8 @@ const styles ={
         color:"#FFE6A7",
         width: "100%"
     },
+    loading:{
+        color:"#FFE6A7",
+        height: "250px",
+    }
 }

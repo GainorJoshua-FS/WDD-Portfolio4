@@ -5,9 +5,10 @@ import { Link } from 'react-router-dom'
 function RankCard(props) {
     return (
         <article {...css(card)} >
-            <h2 style={styles.gameTitle}>{props.name}</h2>
+            <h2 class="subHead" style={styles.gameTitle}>{props.name}</h2>
             <img style={styles.img} src={props.image} alt={props.name + "'s box art"} /> 
-            <h3 style={styles.subInfo}>User Rating: {props.rank}</h3>
+            <h3 style={styles.subInfo}>Rank: {props.rank}</h3>
+            <h3 style={styles.subInfo}>User Rating: {props.rating}</h3>
             <Link to={`/SelectedGame/${props.id}`}><button {...css(btn)}></button></Link>
             {/* <a href={`/SelectedGame/${e.id}`}> <button {...css(btn)}></button></a> */}
         </article>

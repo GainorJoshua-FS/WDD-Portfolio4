@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Montserrat:wght@300&family=Outfit:wght@300&display=swap');
+
 .App {
   text-align: center;
 }
@@ -43,4 +45,16 @@ ul {
 
 html{
   background-color: #FFE6A7;
+}
+
+.heading{
+  font-family: 'Libre Baskerville', serif;
+}
+
+.subHead{
+  font-family: 'Outfit', sans-serif;
+}
+
+.info{
+  font-family: 'Montserrat', sans-serif;
 }
