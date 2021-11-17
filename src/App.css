@@ -69,11 +69,23 @@ html{
   .cardArt{
     width: calc(85%/1);
   }
+  .headLinks{
+    text-align: center;
+  }
+  .searchBar{
+    text-align: center;
+  }
 }
 
 @media(min-width: 644px) {
   .cardArt{
     width: calc(85%/2);
+  }
+  .headLinks{
+    text-align: center;
+  }
+  .searchBar{
+    text-align: right;
   }
 }
 
@@ -87,6 +99,9 @@ html{
   .cardArt{
     width: calc(85%/4); 
     /* 4 */
+  }
+  .headLinks{
+    text-align: right;
   }
 }
 

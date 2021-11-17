@@ -6,7 +6,7 @@ function Header() {
     return (
         <header style={styles.header}>
             <h1 className="heading" style={styles.title}>Board <a href="/"><img src={Logo} alt="Board Debut Logo"/></a> Debut</h1>
-            <div style={styles.links}>
+            <div className="headLinks" style={styles.links}>
                 <Link className="info" style={styles.link} to="/">Home</Link>
                 <Link className="info" style={styles.link} to="/search/hill">Search</Link>
                 <Link className="info" style={styles.link} to="/Collection">My Collection</Link>
@@ -44,7 +44,7 @@ const styles ={
     },
     links:{
         display: "inline-block",
-        textAlign: "right",
+        // textAlign: "right",
         marginBottom:"5px"
         // width: "30%"
     }

@@ -36,7 +36,7 @@ function Search(){
             <SearchForm/>
             <div style={styles.div}>
                 {gameArray.map((e,i)=>{
-                    return<article key={e.id} {...css(card)} >
+                    return<article className="cardArt" key={e.id} {...css(card)} >
                             <h2 className="subHead" style={styles.gameTitle}>{e.name}</h2>
                             <img style={styles.img} src={e.images.medium} alt={e.name + "'s box art"} /> 
                             <Link to={`/SelectedGame/${e.id}`}><button {...css(btn)}></button></Link>
@@ -115,11 +115,13 @@ let card = css({
     backgroundColor: "#633817",
     display: "flex",
     flexDirection: "column",
-    width: "calc(85%/5)",
+    // width: "calc(85%/5)",
     paddingBottom:"10px",
     margin: "20px 0px",
     position: "relative",
     transition:"transform 0.25s",
+    borderRadius: "12px",
+    boxShadow: "10px 5px 5px #432818",
     ':hover':{
         transform: "scale(1.05)"
     }
