@@ -74,19 +74,19 @@ function SelectedGame() {
                     <div style={styles.infoBox}>
                         <h2 style={styles.title}>{obj.name}</h2>
                         <dl style={styles.dl}>
-                            <dd class="subHead" style={styles.dd}>Players:</dd>
-                            <dt class="info" style={styles.dt}>{" " + obj.min_players + "-" + obj.max_players}</dt>
+                            <dd className="subHead" style={styles.dd}>Players:</dd>
+                            <dt className="info" style={styles.dt}>{" " + obj.min_players + "-" + obj.max_players}</dt>
 
-                            <dd class="subHead" style={styles.dd}>Time:</dd>
-                            <dt class="info" style={styles.dt}>{obj.min_playtime + "-" + obj.max_playtime + "mins"}</dt>
+                            <dd className="subHead" style={styles.dd}>Time:</dd>
+                            <dt className="info" style={styles.dt}>{obj.min_playtime + "-" + obj.max_playtime + "mins"}</dt>
 
-                            <dd class="subHead" style={styles.dd}>Price:</dd>
-                            <dt class="info" style={styles.dt}>{obj.msrp_text}</dt>
+                            <dd className="subHead" style={styles.dd}>Price:</dd>
+                            <dt className="info" style={styles.dt}>{obj.msrp_text}</dt>
 
-                            <dd class="subHead" style={styles.dd}>Ages:</dd>
-                            <dt class="info" style={styles.dt}>{obj.min_age + "+"}</dt>
+                            <dd className="subHead" style={styles.dd}>Ages:</dd>
+                            <dt className="info" style={styles.dt}>{obj.min_age + "+"}</dt>
                         </dl>
-                        <p class="info" style={styles.desc}>{obj.description_preview}</p>
+                        <p className="info" style={styles.desc}>{obj.description_preview}</p>
                         <div style={styles.btns}>
                             <form onSubmit={(e)=>{toggleColGame(e,obj.id)}}>
                                 {/* <button style={styles.button} type="submit" >{(!isGameListed) ? "Add to Collection":"Remove from collection"}</button> */}
@@ -94,7 +94,7 @@ function SelectedGame() {
                             </form>
                             <form onSubmit={(e)=>{toggleWishGame(e,obj.id)}}>
                                 {/* <button style={styles.button} type="submit" >{(!isWishListed) ? "Add to Wishlist":"Remove from Wishlist"}</button>  */}
-                                {(!isWishListed) ? <button class="info" style={styles.button} type="submit">Add to Wishlist</button> : <button class="info" style={styles.button2} type="submit">remove from my Wishlist</button> }
+                                {(!isWishListed) ? <button className="info" style={styles.button} type="submit">Add to Wishlist</button> : <button className="info" style={styles.button2} type="submit">remove from my Wishlist</button> }
                             </form>
                         </div>
                     </div>

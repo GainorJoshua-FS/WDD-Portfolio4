@@ -30,8 +30,8 @@ function SearchForm() {
     return (
         <section style={styles.container}>
             <form onSubmit={(e)=>doSearch(e,query)}>
-                <input class="subHead" style={styles.search} name="searchInput" value={query} onChange={updateSearchQuery}/>
-                <button class="info" style={styles.btn} type="submit">Search</button>
+                <input className="subHead" style={styles.search} name="searchInput" value={query} onChange={updateSearchQuery}/>
+                <button className="info" style={styles.btn} type="submit">Search</button>
             </form>
         </section>
     )

@@ -58,3 +58,7 @@ html{
 .info{
   font-family: 'Montserrat', sans-serif;
 }
+
+::placeholder{
+  color: #633817;
+}

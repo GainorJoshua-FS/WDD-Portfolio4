@@ -11,9 +11,7 @@ function Home() {
 
     //  TODO: 
     // Add Footer
-    // Reactive design
-    // Ratings and release dates on home page
-    
+    // Reactive design    
 
     const year = new Date().getFullYear() - 1
 

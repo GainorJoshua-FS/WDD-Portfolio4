@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 function DateCard(props) {
     return (
         <article {...css(card)} >
-            <h2 class="subHead" style={styles.gameTitle}>{props.name}</h2>
+            <h2 className="subHead" style={styles.gameTitle}>{props.name}</h2>
             <img style={styles.img} src={props.image} alt={props.name + "'s box art"} /> 
             <h3 style={styles.subInfo}>{props.info}</h3>
             <Link to={`/SelectedGame/${props.id}`}><button {...css(btn)}></button></Link>

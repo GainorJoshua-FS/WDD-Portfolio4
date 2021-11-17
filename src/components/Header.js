@@ -5,12 +5,12 @@ import Logo from '../images/logo.png';
 function Header() {
     return (
         <header style={styles.header}>
-            <h1 class="heading" style={styles.title}>Board <a href="/"><img src={Logo} alt="Board Debut Logo"/></a> Debut</h1>
+            <h1 className="heading" style={styles.title}>Board <a href="/"><img src={Logo} alt="Board Debut Logo"/></a> Debut</h1>
             <div style={styles.links}>
-                <Link class="info" style={styles.link} to="/">Home</Link>
-                <Link class="info" style={styles.link} to="/search/hill">Search</Link>
-                <Link class="info" style={styles.link} to="/Collection">My Collection</Link>
-                <Link class="info" style={styles.link} to="/Wishlist">Wishlist</Link>
+                <Link className="info" style={styles.link} to="/">Home</Link>
+                <Link className="info" style={styles.link} to="/search/hill">Search</Link>
+                <Link className="info" style={styles.link} to="/Collection">My Collection</Link>
+                <Link className="info" style={styles.link} to="/Wishlist">Wishlist</Link>
             </div>
         </header>
     )

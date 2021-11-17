@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Collection from './components/Collection';
 import SelectedGame from './components/SelectedGame';
 import Wishlist from './components/Wishlist';
+import Footer from './components/Footer';
 
 // cmd shift r -> rfce
 
@@ -23,6 +24,7 @@ function App() {
         </Routes>
 
         {/* <Search/> */}
+        <Footer />
       </HashRouter>
     </main>
   );

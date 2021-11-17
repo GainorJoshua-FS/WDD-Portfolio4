@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 function PriceCard(props) {
     return (
         <article {...css(card)} >
-            <h2 class="subHead" style={styles.gameTitle}>{props.name}</h2>
+            <h2 className="subHead" style={styles.gameTitle}>{props.name}</h2>
             <img style={styles.img} src={props.image} alt={props.name + "'s box art"} /> 
             <ul style={styles.ul}>
                 <li style={styles.was}>Was: ${props.msrp}</li>
