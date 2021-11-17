@@ -62,3 +62,36 @@ html{
 ::placeholder{
   color: #633817;
 }
+
+/* ==================Responsive */
+
+@media(min-width: 420px) {
+  .cardArt{
+    width: calc(85%/1);
+  }
+}
+
+@media(min-width: 644px) {
+  .cardArt{
+    width: calc(85%/2);
+  }
+}
+
+@media(min-width: 858px) {
+  .cardArt{
+    width: calc(85%/3);
+  }
+}
+
+@media(min-width: 1083px) {
+  .cardArt{
+    width: calc(85%/4); 
+    /* 4 */
+  }
+}
+
+@media(min-width: 1184px) {
+  .cardArt{
+    width: calc(85%/5);
+  }
+}

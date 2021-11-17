@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 function RankCard(props) {
     return (
-        <article {...css(card)} >
+        <article className="cardArt" {...css(card)} >
             <h2 className="subHead" style={styles.gameTitle}>{props.name}</h2>
             <img style={styles.img} src={props.image} alt={props.name + "'s box art"} /> 
             <h3 style={styles.subInfo}>Rank: {props.rank}</h3>
@@ -54,7 +54,7 @@ let card = css({
     backgroundColor: "#633817",
     display: "flex",
     flexDirection: "column",
-    width: "calc(85%/5)",
+    // width: "calc(85%/5)",
     paddingBottom:"10px",
     margin: "20px 0px",
     position: "relative",
