@@ -32,7 +32,7 @@ function Wishlist() {
     return (
         <div style={styles.div}>
             {wishlistArray.map((e,i)=>{
-                return <article key={e.id} {...css(card)} >
+                return <article className="cardArt" key={e.id} {...css(card)} >
                 <h2 className="subHead" style={styles.gameTitle}>{e.name}</h2>
                 <img style={styles.img} src={e.images.medium} alt={e.name + "'s box art"} /> 
                 <h3 style={styles.gameTitle}>{e.msrp_text}</h3>
@@ -84,10 +84,12 @@ let card = css({
     backgroundColor: "#633817",
     display: "flex",
     flexDirection: "column",
-    width: "calc(85%/5)",
+    // width: "calc(85%/5)",
     paddingBottom:"10px",
     margin: "20px 0px",
     position: "relative",
+    borderRadius: "12px",
+    boxShadow: "10px 5px 5px #432818",
     transition:"transform 0.25s",
     ':hover':{
         transform: "scale(1.05)"
