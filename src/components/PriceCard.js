@@ -38,6 +38,7 @@ const styles ={
         padding: "10px",
         width: "100%",
         margin: "0 auto",
+        fontWeight: "bold"
     },
     was:{
         textDecoration: "line-through"
@@ -67,6 +68,7 @@ let card = css({
     borderRadius: "12px",
     boxShadow: "10px 5px 5px #432818",
     ':hover':{
-        transform: "scale(1.05)"
+        transform: "scale(1.05)",
+        boxShadow: "7px 5px 10px #583101",
     }
 })
