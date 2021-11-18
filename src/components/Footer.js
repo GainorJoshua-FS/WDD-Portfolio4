@@ -5,10 +5,8 @@ function Footer() {
     return (
         <footer style={styles.footer}>
             <ul style={styles.links}>
-                <li><Link style={styles.link} to="/">LinkedIn</Link></li>
-                <li><Link style={styles.link} to="/">Twitter</Link></li>
-                <li><Link style={styles.link} to="/">Facebook</Link></li>
-                <li><Link style={styles.link} to="/">Instagram</Link></li>
+                <li><Link style={styles.link} to="www.linkedin.com/in/joshua-gainor-0a42a0179">LinkedIn</Link></li>
+                <li><Link style={styles.link} to="https://github.com/GainorJoshua-FS/WDD-Portfolio4">Github</Link></li>
             </ul>
             <p>© 2021 BoardDebut. All rights reserved. <a style={styles.link} href="/">Terms and Conditions</a></p>
             <p><Link style={styles.link} to="/">Privacy Policy</Link></p>
