@@ -76,21 +76,27 @@ function SelectedGame() {
                         <dl className="dl" style={styles.dl}>
                             <dd className="subHead" style={styles.dd}>Players:</dd>
                             {/* <dt className="info" style={styles.dt}>{" " + obj.min_players + "-" + obj.max_players}</dt> */}
-                            <dt className="info" style={styles.dt}>{obj.min_players !== undefined || obj.min_players !== null || obj.min_players !== "" ? obj.min_players + "-" + obj.max_players : "Unavailable"}</dt>
+                            {/* <dt className="info" style={styles.dt}>{obj.min_players !== undefined || obj.min_players !== null || obj.min_players !== "" ? obj.min_players + "-" + obj.max_players : "Unavailable"}</dt> */}
+                            <dt className="info" style={styles.dt}>{(obj.min_players && obj.max_players) ? obj.min_players + "-" + obj.max_players : "Unavailable"}</dt>
 
                             <dd className="subHead" style={styles.dd}>Time:</dd>
                             {/* <dt className="info" style={styles.dt}>{obj.min_playtime + "-" + obj.max_playtime + "mins"}</dt> */}
-                            <dt className="info" style={styles.dt}>{obj.min_playtime !== undefined || obj.min_playtime !== null || obj.min_playtime !== "" ? obj.min_playtime + "-" + obj.max_playtime + "mins" : "Unavailable"}</dt>
+                            {/* <dt className="info" style={styles.dt}>{obj.min_playtime !== undefined || obj.min_playtime !== null || obj.min_playtime !== "" ? obj.min_playtime + "-" + obj.max_playtime + "mins" : "Unavailable"}</dt> */}
+                            <dt className="info" style={styles.dt}>{(obj.min_playtime && obj.max_playtime)? obj.min_playtime + "-" + obj.max_playtime + "mins" : "Unavailable"}</dt>
 
                             <dd className="subHead" style={styles.dd}>Price:</dd>
                             {/* <dt className="info" style={styles.dt}>{obj.msrp_text}</dt> */}
-                            <dt className="info" style={styles.dt}>{(obj.msrp_text !== undefined || obj.msrp_text !== null || obj.msrp_text !== "") && obj.msrp !== 0 ? obj.msrp_text : "Unavailable"}</dt>
+                            {/* <dt className="info" style={styles.dt}>{(obj.msrp_text !== undefined || obj.msrp_text !== null || obj.msrp_text !== "") && obj.msrp !== 0 ? obj.msrp_text : "Unavailable"}</dt> */}
+                            <dt className="info" style={styles.dt}>{(obj.msrp_text)? obj.msrp_text : "Unavailable"}</dt>
 
                             <dd className="subHead" style={styles.dd}>Ages:</dd>
                             {/* <dt className="info" style={styles.dt}>{obj.min_age + "+"}</dt> */}
-                            <dt className="info" style={styles.dt}>{obj.min_age !== undefined || obj.min_age !== null || obj.min_age !== "" ? obj.min_age : "Unavailable"}</dt>
+                            {/* <dt className="info" style={styles.dt}>{obj.min_age !== undefined || obj.min_age !== null || obj.min_age !== "" ? obj.min_age : "Unavailable"}</dt> */}
+                            <dt className="info" style={styles.dt}>{(obj.min_age) ? obj.min_age + "+" : "Unavailable"}</dt>
                         </dl>
-                        <p className="info" style={styles.desc}>{obj.description_preview}</p>
+                        {/* <p className="info" style={styles.desc}>{obj.description_preview}</p> */}
+                        <div className="info" style={styles.desc} dangerouslySetInnerHTML={{ __html: obj.description }}>
+                        </div>
                         <div style={styles.btns}>
                             <form onSubmit={(e)=>{toggleColGame(e,obj.id)}}>
                                 {/* <button style={styles.button} type="submit" >{(!isGameListed) ? "Add to Collection":"Remove from collection"}</button> */}
@@ -160,7 +166,8 @@ const styles ={
     desc:{
         fontSize: "20px",
         fontFamily: "Montserrat",
-        fontWeight: "bold"
+        fontWeight: "bold",
+        textAlign: "left"
     },
     button:{
         backgroundColor: "#633817",

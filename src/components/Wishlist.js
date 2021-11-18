@@ -18,6 +18,9 @@ function Wishlist() {
 
     function showGames(gameIds){
         gameIds = wishlist.getGames();
+        if(gameIds.length ===0){
+            return
+        }
         for(let i = 0; i < gameIds.length; i++){
             BASE_URL += gameIds[i] + ","
         }
