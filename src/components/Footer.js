@@ -21,7 +21,8 @@ const styles = {
         backgroundColor: "#633817",
         color: "#FFE6A7",
         paddingBottom: "20px", 
-        paddingTop: "20px" 
+        paddingTop: "20px" ,
+        marginTop: "20px"
     },
     links:{
         display: "flex",
