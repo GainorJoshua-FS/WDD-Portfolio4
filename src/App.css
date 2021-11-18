@@ -103,10 +103,49 @@ html{
   .headLinks{
     text-align: right;
   }
+  /* .selectPage{
+    display: "flex";
+    flex-direction: "column";
+    justify-content: center;
+    text-align: center;
+  } */
+  /* .imgBox{
+    width: 100%;
+    margin: 0px
+  }
+  .infoBox{
+    width: 100%;
+    text-align: center;
+  } */
 }
 
 @media(min-width: 1184px) {
   .cardArt{
     width: calc(85%/5);
   }
+  /* .dl{
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+  } */
+  /* .selectPage{
+    display: "flex";
+    flex-direction: "row"
+  }
+  .imgBox{
+    width: calc(100% / 2 - 20px);
+    margin: 20px 20px 0px 100px;
+  }
+  .infoBox{
+    width: calc(100%/2 - 20px);
+    text-align: left;
+  } */
+}
+
+@media(min-width: 1550px) {
+  /* .dl{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  } */
 }

@@ -63,28 +63,32 @@ function SelectedGame() {
     }
 
     return (
-        <div style={styles.container}>
+        <div className="selectPage" style={styles.container}>
             {selGame.map((obj,i)=>{
                 return <section key={obj.id} style={styles.container}>
                      {/* IMAGE  */}
-                    <div style={styles.imgBox}>
+                    <div className="imgBox" style={styles.imgBox}>
                         <img style={styles.img} src={obj.images.medium} alt={obj.name + "'s box art"} />
                     </div>
                     {/* INFO */}
-                    <div style={styles.infoBox}>
+                    <div className="infoBox" style={styles.infoBox}>
                         <h2 style={styles.title}>{obj.name}</h2>
-                        <dl style={styles.dl}>
+                        <dl className="dl" style={styles.dl}>
                             <dd className="subHead" style={styles.dd}>Players:</dd>
-                            <dt className="info" style={styles.dt}>{" " + obj.min_players + "-" + obj.max_players}</dt>
+                            {/* <dt className="info" style={styles.dt}>{" " + obj.min_players + "-" + obj.max_players}</dt> */}
+                            <dt className="info" style={styles.dt}>{obj.min_players !== undefined || obj.min_players !== null || obj.min_players !== "" ? obj.min_players + "-" + obj.max_players : "Unavailable"}</dt>
 
                             <dd className="subHead" style={styles.dd}>Time:</dd>
-                            <dt className="info" style={styles.dt}>{obj.min_playtime + "-" + obj.max_playtime + "mins"}</dt>
+                            {/* <dt className="info" style={styles.dt}>{obj.min_playtime + "-" + obj.max_playtime + "mins"}</dt> */}
+                            <dt className="info" style={styles.dt}>{obj.min_playtime !== undefined || obj.min_playtime !== null || obj.min_playtime !== "" ? obj.min_playtime + "-" + obj.max_playtime + "mins" : "Unavailable"}</dt>
 
                             <dd className="subHead" style={styles.dd}>Price:</dd>
-                            <dt className="info" style={styles.dt}>{obj.msrp_text}</dt>
+                            {/* <dt className="info" style={styles.dt}>{obj.msrp_text}</dt> */}
+                            <dt className="info" style={styles.dt}>{(obj.msrp_text !== undefined || obj.msrp_text !== null || obj.msrp_text !== "") && obj.msrp !== 0 ? obj.msrp_text : "Unavailable"}</dt>
 
                             <dd className="subHead" style={styles.dd}>Ages:</dd>
-                            <dt className="info" style={styles.dt}>{obj.min_age + "+"}</dt>
+                            {/* <dt className="info" style={styles.dt}>{obj.min_age + "+"}</dt> */}
+                            <dt className="info" style={styles.dt}>{obj.min_age !== undefined || obj.min_age !== null || obj.min_age !== "" ? obj.min_age : "Unavailable"}</dt>
                         </dl>
                         <p className="info" style={styles.desc}>{obj.description_preview}</p>
                         <div style={styles.btns}>
@@ -117,24 +121,25 @@ const styles ={
     imgBox:{
         width: "calc(100%/2 - 20px)",
         backgroundColor: "white",
-        margin: "20px 20px 0px 100px"
+        margin: "20px 20px 0px 100px",
+        height: "75%",
     },
     img:{
-        width: "80%",
-        marginTop: "40px"
+        width: "100%",
+        marginTop: "40px",
     },
     infoBox:{
         width: "calc(100%/2 - 1rem)",
         display: "flex",
         flexDirection: "column",
-        textAlign: "left",
+        textAlign: "center",
         color: "#633817",
         marginRight: "100px"
     },
     dl:{
         display: "flex",
         flexDirection: "row",
-        justifyContent: "center"
+        justifyContent: "center",
     },
     title:{
         textAlign: "center",
@@ -144,13 +149,13 @@ const styles ={
     dd:{
         fontFamily: "Futura PT",
         fontWeight: "bold",
-        fontSize: "24px"
+        fontSize: "24px",
     },
     dt:{
         fontFamily: "Montserrat",
         fontSize: "20px",
         marginLeft: "10px",
-        marginTop: "6px"
+        marginTop: "6px",
     },
     desc:{
         fontSize: "20px",
