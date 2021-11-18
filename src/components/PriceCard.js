@@ -66,9 +66,9 @@ let card = css({
     position: "relative",
     transition:"transform 0.25s",
     borderRadius: "12px",
-    boxShadow: "10px 5px 5px #432818",
+    boxShadow: "7px 5px 5px #432818",
     ':hover':{
         transform: "scale(1.05)",
-        boxShadow: "7px 5px 10px #583101",
+        boxShadow: "5px 5px 10px #583101",
     }
 })
