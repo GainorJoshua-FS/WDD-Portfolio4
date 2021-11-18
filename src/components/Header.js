@@ -1,3 +1,4 @@
+import { css } from 'glamor';
 import React from 'react'
 import { Link } from 'react-router-dom';
 import Logo from '../images/logo.png';
@@ -7,10 +8,10 @@ function Header() {
         <header style={styles.header}>
             <h1 className="heading" style={styles.title}>Board <Link to="/"><img src={Logo} alt="Board Debut Logo"/></Link> Debut</h1>
             <div className="headLinks" style={styles.links}>
-                <Link className="info" style={styles.link} to="/">Home</Link>
-                <Link className="info" style={styles.link} to="/search/hill">Search</Link>
-                <Link className="info" style={styles.link} to="/Collection">My Collection</Link>
-                <Link className="info" style={styles.link} to="/Wishlist">Wishlist</Link>
+                <Link className="info" {...css(link)} to="/">Home</Link>
+                <Link className="info" {...css(link)} to="/search/hill">Search</Link>
+                <Link className="info" {...css(link)} to="/Collection">My Collection</Link>
+                <Link className="info" {...css(link)} to="/Wishlist">Wishlist</Link>
             </div>
         </header>
     )
@@ -27,12 +28,13 @@ const styles ={
         flexDirection: "column",
     },
     link:{
-        backgroundColor: "#432818",
         color: "#FFE6A7",
         margin: "1rem",
         padding: "5px",
-        fontFamily: "Montserrat",
-        fontWeight: "bold"
+        fontFamily: "Futura PT",
+        fontWeight: "bold",
+        border: "none",
+        textDecoration: "none"
     },
     title:{
         fontFamily: "Baskerville",
@@ -49,3 +51,18 @@ const styles ={
         // width: "30%"
     }
 }
+
+let link = css({
+    color: "#FFE6A7",
+    margin: "1rem",
+    padding: "0px 15px",
+    fontFamily: "Futura PT",
+    fontWeight: "bold",
+    border: "none",
+    textDecoration: "none",
+    fontSize: "20px",
+    ':hover':{
+        backgroundColor: "#432818",
+        borderRadius: "12px",
+    }
+})
