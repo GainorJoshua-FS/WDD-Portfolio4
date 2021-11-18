@@ -1,3 +1,4 @@
+import { css } from 'glamor';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import CollectionHelper from './CollectionHelper';
@@ -76,22 +77,18 @@ function SelectedGame() {
                         <dl className="dl" style={styles.dl}>
                             <dd className="subHead" style={styles.dd}>Players:</dd>
                             {/* <dt className="info" style={styles.dt}>{" " + obj.min_players + "-" + obj.max_players}</dt> */}
-                            {/* <dt className="info" style={styles.dt}>{obj.min_players !== undefined || obj.min_players !== null || obj.min_players !== "" ? obj.min_players + "-" + obj.max_players : "Unavailable"}</dt> */}
                             <dt className="info" style={styles.dt}>{(obj.min_players && obj.max_players) ? obj.min_players + "-" + obj.max_players : "Unavailable"}</dt>
 
                             <dd className="subHead" style={styles.dd}>Time:</dd>
                             {/* <dt className="info" style={styles.dt}>{obj.min_playtime + "-" + obj.max_playtime + "mins"}</dt> */}
-                            {/* <dt className="info" style={styles.dt}>{obj.min_playtime !== undefined || obj.min_playtime !== null || obj.min_playtime !== "" ? obj.min_playtime + "-" + obj.max_playtime + "mins" : "Unavailable"}</dt> */}
                             <dt className="info" style={styles.dt}>{(obj.min_playtime && obj.max_playtime)? obj.min_playtime + "-" + obj.max_playtime + "mins" : "Unavailable"}</dt>
 
                             <dd className="subHead" style={styles.dd}>Price:</dd>
                             {/* <dt className="info" style={styles.dt}>{obj.msrp_text}</dt> */}
-                            {/* <dt className="info" style={styles.dt}>{(obj.msrp_text !== undefined || obj.msrp_text !== null || obj.msrp_text !== "") && obj.msrp !== 0 ? obj.msrp_text : "Unavailable"}</dt> */}
                             <dt className="info" style={styles.dt}>{(obj.msrp_text)? obj.msrp_text : "Unavailable"}</dt>
 
                             <dd className="subHead" style={styles.dd}>Ages:</dd>
                             {/* <dt className="info" style={styles.dt}>{obj.min_age + "+"}</dt> */}
-                            {/* <dt className="info" style={styles.dt}>{obj.min_age !== undefined || obj.min_age !== null || obj.min_age !== "" ? obj.min_age : "Unavailable"}</dt> */}
                             <dt className="info" style={styles.dt}>{(obj.min_age) ? obj.min_age + "+" : "Unavailable"}</dt>
                         </dl>
                         {/* <p className="info" style={styles.desc}>{obj.description_preview}</p> */}
@@ -100,11 +97,11 @@ function SelectedGame() {
                         <div style={styles.btns}>
                             <form onSubmit={(e)=>{toggleColGame(e,obj.id)}}>
                                 {/* <button style={styles.button} type="submit" >{(!isGameListed) ? "Add to Collection":"Remove from collection"}</button> */}
-                                {(!isGameListed) ? <button style={styles.button} type="submit">Add to Collection</button> : <button style={styles.button2} type="submit">remove from my Collection</button> }
+                                {(!isGameListed) ? <button {...css(btn1)} type="submit">Add to Collection</button> : <button {...css(btn2)} type="submit">remove from my Collection</button> }
                             </form>
                             <form onSubmit={(e)=>{toggleWishGame(e,obj.id)}}>
                                 {/* <button style={styles.button} type="submit" >{(!isWishListed) ? "Add to Wishlist":"Remove from Wishlist"}</button>  */}
-                                {(!isWishListed) ? <button className="info" style={styles.button} type="submit">Add to Wishlist</button> : <button className="info" style={styles.button2} type="submit">remove from my Wishlist</button> }
+                                {(!isWishListed) ? <button className="info" {...css(btn1)} type="submit">Add to Wishlist</button> : <button className="info" {...css(btn2)} type="submit">remove from my Wishlist</button> }
                             </form>
                         </div>
                     </div>
@@ -195,3 +192,33 @@ const styles ={
         display: "flex"
     }
 }
+
+let btn1 = css({
+    backgroundColor: "#633817",
+    color: "#FFE6A7",
+    fontFamily: "Montserrat",
+    padding: "15px",
+    borderRadius: "12px",
+    border: "none",
+    cursor: "pointer",
+    fontWeight: "bold",
+    marginRight: "10px",
+    ':hover':{
+        textDecoration: "underline"
+    }
+})
+
+let btn2 = css({
+    backgroundColor: "#9E2A2B",
+    color: "#FFE6A7",
+    fontFamily: "Montserrat",
+    padding: "15px",
+    borderRadius: "12px",
+    border: "none",
+    cursor: "pointer",
+    fontWeight: "bold",
+    marginRight: "10px",
+    ':hover':{
+        textDecoration: "underline"
+    }
+})
