@@ -7,11 +7,7 @@ import PriceCard from './PriceCard';
 import RankCard from './RankCard';
 
 
-function Home() {
-
-    //  TODO: 
-    // Add Footer
-    // Reactive design    
+function Home() { 
 
     const year = new Date().getFullYear() - 1
 

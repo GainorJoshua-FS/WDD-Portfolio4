@@ -39,6 +39,7 @@ function Collection() {
 
     return (
         <div style={styles.div}>
+            {(collectionArray.length === 0)?<h1 style={styles.empty}>Looks like your collection is empty...</h1>:""}
             {collectionArray.map((e,i)=>{
                 return <article className="cardArt" key={e.id} {...css(card)} >
                 <h2 className="suHead" style={styles.gameTitle}>{e.name}</h2>
@@ -74,6 +75,17 @@ const styles ={
         color:"#FFE6A7",
         fontFamily: "Futura PT"
     },
+    empty:{
+        backgroundColor: "#633817",
+        paddingBottom:"10px",
+        margin: "20px 0px",
+        position: "relative",
+        color:"#FFE6A7",
+        padding: "5px 20px",
+        boxShadow: "10px 5px 5px #432818",
+        borderRadius: "12px", 
+        marginBottom:"200px",
+    }
 }
 
 let btn = css({

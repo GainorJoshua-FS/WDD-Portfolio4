@@ -38,7 +38,7 @@ const styles = {
     footer:{
         backgroundColor: "#633817",
         color: "#FFE6A7",
-        paddingBottom: "10px",
+        paddingBottom: "100px",  
     },
     header:{
         fontFamily: "Baskerville",
