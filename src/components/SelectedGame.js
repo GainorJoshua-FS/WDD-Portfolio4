@@ -139,15 +139,17 @@ const styles ={
         color: "#633817",
         marginRight: "100px"
     },
-    dl:{
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "center",
-    },
     title:{
         textAlign: "center",
         fontSize: "45px",
         marginTop: "20px"
+    },
+    dl:{
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "center",
+        // gap: "10px 100px",
+        flexWrap: "wrap"
     },
     dd:{
         fontFamily: "Futura PT",
